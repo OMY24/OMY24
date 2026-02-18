@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OMY24</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffe4ec;
+      color: #ff8fab;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+
+
+    /* page SVG bg flowers */
+    .bg-flowers {
+      position: fixed;
+      inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.12;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ffb6c1, #ff8fab);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    header svg.flowers {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      opacity: 0.22;
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; position: relative; z-index: 1; }
+    header p { font-size: 1.1rem; opacity: 0.9; position: relative; z-index: 1; }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+    h2 { text-align: center; font-size: 1.8rem; margin-bottom: 40px; color: #ff8fab; }
+
+    .team-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .team-grid .card { width: 280px; }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 12px 10px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(255,143,171,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    /* subtle corner flower accent on cards */
+    .card::before {
+      content: '✿';
+      position: absolute;
+      top: 6px; right: 10px;
+      font-size: 0.9rem;
+      color: #ffb6c1;
+      opacity: 0.5;
+    }
+    .card::after {
+      content: '✿';
+      position: absolute;
+      bottom: 6px; left: 10px;
+      font-size: 0.9rem;
+      color: #ffb6c1;
+      opacity: 0.5;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(255,143,171,0.25); }
+
+    .avatar {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      color: white;
+    }
+
+    .card h3 { font-size: 1.1rem; margin-bottom: 5px; }
+    .card .role { color: #ffb6c1; font-size: 0.9rem; margin-bottom: 15px; }
+
+    .social-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .social-links a {
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .social-links a:hover { opacity: 0.8; }
+    .btn-github  { background: #ff8fab; color: white; }
+    .btn-twitter { background: #ff8fab; color: white; }
+    .btn-profile { background: #667eea; color: white; }
+
+    /* divider */
+    .divider {
+      text-align: center;
+      color: #ffb6c1;
+      font-size: 1.2rem;
+      letter-spacing: 8px;
+      margin: 10px 0 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #ffb6c1;
+      font-size: 0.9rem;
+      margin-top: 60px;
+      border-top: 1px dashed #ffb6c1;
+      position: relative;
+      z-index: 1;
+    }
+    footer .footer-flowers { letter-spacing: 6px; font-size: 1rem; display: block; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <!-- background page flowers -->
+  <svg class="bg-flowers" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice">
+    <g transform="translate(30,80)"><circle cx="0" cy="-10" r="6" fill="#ff8fab"/><circle cx="7" cy="-7" r="6" fill="#ff8fab"/><circle cx="10" cy="0" r="6" fill="#ff8fab"/><circle cx="7" cy="7" r="6" fill="#ff8fab"/><circle cx="0" cy="10" r="6" fill="#ff8fab"/><circle cx="-7" cy="7" r="6" fill="#ff8fab"/><circle cx="-10" cy="0" r="6" fill="#ff8fab"/><circle cx="-7" cy="-7" r="6" fill="#ff8fab"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+    <g transform="translate(750,120)"><circle cx="0" cy="-10" r="6" fill="#ff8fab"/><circle cx="7" cy="-7" r="6" fill="#ff8fab"/><circle cx="10" cy="0" r="6" fill="#ff8fab"/><circle cx="7" cy="7" r="6" fill="#ff8fab"/><circle cx="0" cy="10" r="6" fill="#ff8fab"/><circle cx="-7" cy="7" r="6" fill="#ff8fab"/><circle cx="-10" cy="0" r="6" fill="#ff8fab"/><circle cx="-7" cy="-7" r="6" fill="#ff8fab"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+    <g transform="translate(400,280)"><circle cx="0" cy="-14" r="9" fill="#ff8fab"/><circle cx="10" cy="-9" r="9" fill="#ff8fab"/><circle cx="14" cy="0" r="9" fill="#ff8fab"/><circle cx="10" cy="9" r="9" fill="#ff8fab"/><circle cx="0" cy="14" r="9" fill="#ff8fab"/><circle cx="-10" cy="9" r="9" fill="#ff8fab"/><circle cx="-14" cy="0" r="9" fill="#ff8fab"/><circle cx="-10" cy="-9" r="9" fill="#ff8fab"/><circle cx="0" cy="0" r="7" fill="#ffb6c1"/></g>
+    <g transform="translate(100,400)"><circle cx="0" cy="-10" r="6" fill="#ff8fab"/><circle cx="7" cy="-7" r="6" fill="#ff8fab"/><circle cx="10" cy="0" r="6" fill="#ff8fab"/><circle cx="7" cy="7" r="6" fill="#ff8fab"/><circle cx="0" cy="10" r="6" fill="#ff8fab"/><circle cx="-7" cy="7" r="6" fill="#ff8fab"/><circle cx="-10" cy="0" r="6" fill="#ff8fab"/><circle cx="-7" cy="-7" r="6" fill="#ff8fab"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+    <g transform="translate(700,450)"><circle cx="0" cy="-14" r="9" fill="#ff8fab"/><circle cx="10" cy="-9" r="9" fill="#ff8fab"/><circle cx="14" cy="0" r="9" fill="#ff8fab"/><circle cx="10" cy="9" r="9" fill="#ff8fab"/><circle cx="0" cy="14" r="9" fill="#ff8fab"/><circle cx="-10" cy="9" r="9" fill="#ff8fab"/><circle cx="-14" cy="0" r="9" fill="#ff8fab"/><circle cx="-10" cy="-9" r="9" fill="#ff8fab"/><circle cx="0" cy="0" r="7" fill="#ffb6c1"/></g>
+    <g transform="translate(250,600)"><circle cx="0" cy="-10" r="6" fill="#ff8fab"/><circle cx="7" cy="-7" r="6" fill="#ff8fab"/><circle cx="10" cy="0" r="6" fill="#ff8fab"/><circle cx="7" cy="7" r="6" fill="#ff8fab"/><circle cx="0" cy="10" r="6" fill="#ff8fab"/><circle cx="-7" cy="7" r="6" fill="#ff8fab"/><circle cx="-10" cy="0" r="6" fill="#ff8fab"/><circle cx="-7" cy="-7" r="6" fill="#ff8fab"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+    <g transform="translate(550,700)"><circle cx="0" cy="-14" r="9" fill="#ff8fab"/><circle cx="10" cy="-9" r="9" fill="#ff8fab"/><circle cx="14" cy="0" r="9" fill="#ff8fab"/><circle cx="10" cy="9" r="9" fill="#ff8fab"/><circle cx="0" cy="14" r="9" fill="#ff8fab"/><circle cx="-10" cy="9" r="9" fill="#ff8fab"/><circle cx="-14" cy="0" r="9" fill="#ff8fab"/><circle cx="-10" cy="-9" r="9" fill="#ff8fab"/><circle cx="0" cy="0" r="7" fill="#ffb6c1"/></g>
+    <g transform="translate(50,800)"><circle cx="0" cy="-10" r="6" fill="#ff8fab"/><circle cx="7" cy="-7" r="6" fill="#ff8fab"/><circle cx="10" cy="0" r="6" fill="#ff8fab"/><circle cx="7" cy="7" r="6" fill="#ff8fab"/><circle cx="0" cy="10" r="6" fill="#ff8fab"/><circle cx="-7" cy="7" r="6" fill="#ff8fab"/><circle cx="-10" cy="0" r="6" fill="#ff8fab"/><circle cx="-7" cy="-7" r="6" fill="#ff8fab"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+    <g transform="translate(780,820)"><circle cx="0" cy="-10" r="6" fill="#ff8fab"/><circle cx="7" cy="-7" r="6" fill="#ff8fab"/><circle cx="10" cy="0" r="6" fill="#ff8fab"/><circle cx="7" cy="7" r="6" fill="#ff8fab"/><circle cx="0" cy="10" r="6" fill="#ff8fab"/><circle cx="-7" cy="7" r="6" fill="#ff8fab"/><circle cx="-10" cy="0" r="6" fill="#ff8fab"/><circle cx="-7" cy="-7" r="6" fill="#ff8fab"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+  </svg>
+
+  <header>
+    <svg class="flowers" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" preserveAspectRatio="xMidYMid slice">
+      <g transform="translate(40,40)"><circle cx="0" cy="-14" r="9" fill="white"/><circle cx="10" cy="-9" r="9" fill="white"/><circle cx="14" cy="0" r="9" fill="white"/><circle cx="10" cy="9" r="9" fill="white"/><circle cx="0" cy="14" r="9" fill="white"/><circle cx="-10" cy="9" r="9" fill="white"/><circle cx="-14" cy="0" r="9" fill="white"/><circle cx="-10" cy="-9" r="9" fill="white"/><circle cx="0" cy="0" r="7" fill="#ffb6c1"/></g>
+      <g transform="translate(140,150)"><circle cx="0" cy="-10" r="6" fill="white"/><circle cx="7" cy="-7" r="6" fill="white"/><circle cx="10" cy="0" r="6" fill="white"/><circle cx="7" cy="7" r="6" fill="white"/><circle cx="0" cy="10" r="6" fill="white"/><circle cx="-7" cy="7" r="6" fill="white"/><circle cx="-10" cy="0" r="6" fill="white"/><circle cx="-7" cy="-7" r="6" fill="white"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+      <g transform="translate(260,55)"><circle cx="0" cy="-10" r="6" fill="white"/><circle cx="7" cy="-7" r="6" fill="white"/><circle cx="10" cy="0" r="6" fill="white"/><circle cx="7" cy="7" r="6" fill="white"/><circle cx="0" cy="10" r="6" fill="white"/><circle cx="-7" cy="7" r="6" fill="white"/><circle cx="-10" cy="0" r="6" fill="white"/><circle cx="-7" cy="-7" r="6" fill="white"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+      <g transform="translate(400,30)"><circle cx="0" cy="-14" r="9" fill="white"/><circle cx="10" cy="-9" r="9" fill="white"/><circle cx="14" cy="0" r="9" fill="white"/><circle cx="10" cy="9" r="9" fill="white"/><circle cx="0" cy="14" r="9" fill="white"/><circle cx="-10" cy="9" r="9" fill="white"/><circle cx="-14" cy="0" r="9" fill="white"/><circle cx="-10" cy="-9" r="9" fill="white"/><circle cx="0" cy="0" r="7" fill="#ffb6c1"/></g>
+      <g transform="translate(400,160)"><circle cx="0" cy="-10" r="6" fill="white"/><circle cx="7" cy="-7" r="6" fill="white"/><circle cx="10" cy="0" r="6" fill="white"/><circle cx="7" cy="7" r="6" fill="white"/><circle cx="0" cy="10" r="6" fill="white"/><circle cx="-7" cy="7" r="6" fill="white"/><circle cx="-10" cy="0" r="6" fill="white"/><circle cx="-7" cy="-7" r="6" fill="white"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+      <g transform="translate(540,70)"><circle cx="0" cy="-10" r="6" fill="white"/><circle cx="7" cy="-7" r="6" fill="white"/><circle cx="10" cy="0" r="6" fill="white"/><circle cx="7" cy="7" r="6" fill="white"/><circle cx="0" cy="10" r="6" fill="white"/><circle cx="-7" cy="7" r="6" fill="white"/><circle cx="-10" cy="0" r="6" fill="white"/><circle cx="-7" cy="-7" r="6" fill="white"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+      <g transform="translate(660,145)"><circle cx="0" cy="-14" r="9" fill="white"/><circle cx="10" cy="-9" r="9" fill="white"/><circle cx="14" cy="0" r="9" fill="white"/><circle cx="10" cy="9" r="9" fill="white"/><circle cx="0" cy="14" r="9" fill="white"/><circle cx="-10" cy="9" r="9" fill="white"/><circle cx="-14" cy="0" r="9" fill="white"/><circle cx="-10" cy="-9" r="9" fill="white"/><circle cx="0" cy="0" r="7" fill="#ffb6c1"/></g>
+      <g transform="translate(760,40)"><circle cx="0" cy="-10" r="6" fill="white"/><circle cx="7" cy="-7" r="6" fill="white"/><circle cx="10" cy="0" r="6" fill="white"/><circle cx="7" cy="7" r="6" fill="white"/><circle cx="0" cy="10" r="6" fill="white"/><circle cx="-7" cy="7" r="6" fill="white"/><circle cx="-10" cy="0" r="6" fill="white"/><circle cx="-7" cy="-7" r="6" fill="white"/><circle cx="0" cy="0" r="5" fill="#ffb6c1"/></g>
+    </svg>
+    <h1>Welcome! ♡</h1>
+    <p>Enjoy shopping</p>
+  </header>
+
+  <div class="container">
+    <div class="divider">✿ ✾ ✿ ✾ ✿</div>
+    <h2>Check the links below :)</h2>
+    <div class="team-grid">
+
+      <div class="card">
+        <div class="avatar" style="background: linear-gradient(135deg,#ffb6c1,#ff8fab)">🛵</div>
+        <h3>Mio Soulty</h3>
+        <div class="role">Parts and Accessories</div>
+        <div class="social-links">
+          <a href="https://collshp.com/omy24/category/1681686" class="btn-github">Links</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="avatar" style="background: linear-gradient(135deg,#f093fb,#f5576c)">🛒</div>
+        <h3>Shopee Links</h3>
+        <div class="role">Random things</div>
+        <div class="social-links">
+          <a href="https://collshp.com/omy24?view=storefront" class="btn-twitter">Shopee Links</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="avatar" style="background: linear-gradient(135deg,#4facfe,#00f2fe)">🖤</div>
+        <h3>Follow me on Tiktok</h3>
+        <div class="role">Sharing a little glimpse of my life</div>
+        <div class="social-links">
+          <a href="https://www.tiktok.com/@_omy24_?is_from_webapp=1&sender_device=pc" class="btn-github">Tiktok</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="divider" style="margin-top:40px;">✿ ✾ ✿ ✾ ✿</div>
+  </div>
+
+  <footer>
+    <span class="footer-flowers">✿ ✾ ✿ ✾ ✿</span>
+    &copy; 2026 OMY24. All rights reserved.
+  </footer>
+
+</body>
+</html>
